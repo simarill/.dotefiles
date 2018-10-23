@@ -11,9 +11,12 @@ autocmd BufWritePre *.yml :%s/\s\+$//e
 " Tab Config                                                                    
 set tabstop=2       " number of visual spaces per TAB                           
 set softtabstop=2   " number of spaces in tab when editing                      
-set expandtab       " tabs are spaces                                           
-set shiftwidth=2                                                                
+set shiftwidth=2         
+set expandtab       " Use spaces instead of tabs
+set smarttab        " Be smart when using tabs ;) -> Uses shiftwidth instead of tabstop at                                                 
 
+
+164 
 " UI Config                                                                     
 set number          " show line numbers 
 
