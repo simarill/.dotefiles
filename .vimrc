@@ -1,9 +1,5 @@
-" Whitespace Remove                                                             
-                                                                                 
-" Remove whitespaces everywhere                                                 
-" autocmd BufWritePre * :%s/\s\+$//e
-                                                                               
 " Delete trailing white space on save                                            
+" autocmd BufWritePre * :%s/\s\+$//e        " remove white spaces in all files
 autocmd BufWritePre *.js :%s/\s\+$//e                                           
 autocmd BufWritePre *.ts :%s/\s\+$//e    
 autocmd BufWritePre *.html :%s/\s\+$//e                                          
@@ -11,7 +7,6 @@ autocmd BufWritePre *.css :%s/\s\+$//e
 autocmd BufWritePre *.sass :%s/\s\+$//e                                         
 autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.yml :%s/\s\+$//e 
-" autocmd BufWritePre *.md :%s/\s\+$//e   
 
 " Tab Config                                                                    
 set tabstop=2       " number of visual spaces per TAB                           
