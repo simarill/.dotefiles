@@ -16,3 +16,50 @@ set shiftwidth=2
 
 " UI Config                                                                     
 set number          " show line numbers 
+
+"------------------------------------------------------------------------------
+
+" Always display the status line
+set laststatus=2
+
+" Display the cursor position
+set ruler
+
+" Set utf8 as standard encoding and en_US as the standard language              
+set encoding=utf8                                                                                   
+
+" Enable syntax highlighting
+syntax on
+
+" Better command-line completion
+set wildmenu                                                                    
+set wildmode=longest,list 
+
+
+" Mapping
+inoremap kj <ESC>                                                               
+inoremap jk <ESC>                                                               
+nnoremap j gj          " gj to move down one displayed line                                                          
+nnoremap k gk          " gk to move up one displayed line 
+
+nmap <leader>w :w!<cr>       " fast save                                                           
+nmap <leader>q :wq!<cr>     " fast quite with save
+
+" Git commits configs                                                                  
+autocmd FileType gitcommit setlocal spell                                       
+autocmd FileType gitcommit setlocal textwidth=80                                
+                                                                                 
+" paste                                                                         
+set pastetoggle=<leader>p
+
+" Toggle spellcheck                                                              
+nnoremap <F7> :setlocal spell! spell?<CR>                                       
+inoremap <F7> <C-o>::setlocal spell! spell?<CR>
+
+" Search
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" Highlight searches 
+set hlsearch
