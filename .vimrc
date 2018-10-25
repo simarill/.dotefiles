@@ -15,11 +15,11 @@ set shiftwidth=2
 set expandtab       " Use spaces instead of tabs
 set smarttab        " Be smart when using tabs ;) -> Uses shiftwidth instead of tabstop at                                                 
 
-
-164 
 " UI Config                                                                     
 set number          " show line numbers 
 
+colorscheme pablo 
+set background=dark
 "------------------------------------------------------------------------------
 
 " Always display the status line
