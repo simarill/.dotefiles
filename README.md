@@ -11,7 +11,7 @@ Aligning text [Tabular](http://vimcasts.org/episodes/aligning-text-with-tabular-
 
 
 ## setproxy
-```
+
 `ect/environment`  
 ```
 http_proxy=http://{proxyip}
@@ -33,3 +33,8 @@ git config --global user.name ""
 git config --global user.email ""
 git config --global core.excludesfile ~/.gitignore_global
 ```
+
+## 
+* [nvm](https://github.com/creationix/nvm)
+* [tldr](https://github.com/tldr-pages/tldr)
+* [ag](https://github.com/ggreer/the_silver_searcher)
