@@ -2,6 +2,7 @@
 cp .bash_aliases ~/.bash_aliases
 cp .config/nvim/init.vim ~/.config/nvim/init.vim
 cp .ssh/config ~/.ssh/config
+cp .tmux.conf ~/.tmux.conf
 
 # Copy content of .bashrc to ~/.bachrc
 cat .bashrc ~/.bashrc > newbashrc
