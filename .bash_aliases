@@ -11,3 +11,6 @@ function up {
   done
 }
 
+# open file in  browser
+alias open='xdg-open'
+
