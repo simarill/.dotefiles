@@ -1,6 +1,6 @@
 "  directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
-"   " - Avoid using standard Vim directory names like 'plugin'
+" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Editor Settings
@@ -19,6 +19,8 @@ Plug 'ctrlpvim/ctrlp.vim' " fizzy finder vim ignores node_modules thanks to ag
 
 Plug 'scrooloose/nerdtree' " navigable tree in vim
 
+Plug 'bdauria/angular-cli.vim' " :G(enereate), :E(dit), :S(pilt), :VS(plit), :T(abnew)
+
 " Colorschemes
 Plug 'fcpg/vim-farout'
 Plug 'kadekillary/skull-vim'
@@ -30,6 +32,9 @@ Plug 'junegunn/vim-easy-align'
 
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " have nodejs and yarn
+
+" Git wrapper
+Plug 'tpope/vim-fugitive' " :Gsplit, :Gvsplit, :Gdiff
 
 " Initialize plugin system
 call plug#end()
