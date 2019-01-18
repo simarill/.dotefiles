@@ -14,3 +14,5 @@ function up {
 # open file in  browser
 alias open='xdg-open'
 
+#open nvim config
+alias vimconf='vim ~/.config/nvim/init.vim'
