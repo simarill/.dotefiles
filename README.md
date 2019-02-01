@@ -38,6 +38,5 @@ git config --global core.excludesfile ~/.gitignore_global
   
 ## i3 navigaiton
 
-`<mod-f>` - full view of focused tab  
-`<mod-r>` - resize tab  
+[Cheat Sheet](https://i3wm.org/docs/refcard.html)
 
