@@ -1,3 +1,6 @@
+# typos...
+alias gti='git'
+
 # Always use neovim instead of vim or vi
 alias vim='nvim'
 alias vi='nvim'
@@ -15,4 +18,7 @@ function up {
 alias open='xdg-open'
 
 #open nvim config
-alias vimconf='vim ~/.config/nvim/init.vim'
+alias vc='vim ~/.config/nvim/init.vim'
+
+# tree ingnore node_modules
+alias tree='tree -I node_modules*'
