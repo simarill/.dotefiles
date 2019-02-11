@@ -14,18 +14,18 @@ Plug 'sheerun/vim-polyglot'              " Collection of language packages
 Plug 'HerringtonDarkholme/yats.vim'      " ts syntax
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " clone fzf in ~/.fzf and run the install script
-Plug 'junegunn/fzf.vim' " Config for fzf
-Plug 'ctrlpvim/ctrlp.vim' " fizzy finder vim ignores node_modules thanks to ag
+Plug 'junegunn/fzf.vim'                  " Config for fzf
+Plug 'ctrlpvim/ctrlp.vim'                " fizzy finder vim ignores node_modules thanks to ag
 
-Plug 'scrooloose/nerdtree' " navigable tree in vim
+Plug 'scrooloose/nerdtree'               " navigable tree in vim
 
-Plug 'bdauria/angular-cli.vim' " :G(enereate), :E(dit), :S(pilt), :VS(plit), :T(abnew)
+Plug 'bdauria/angular-cli.vim'           " :G(enereate), :E(dit), :S(pilt), :VS(plit), :T(abnew)
 
 " Colorschemes
 Plug 'fcpg/vim-farout'
 Plug 'kadekillary/skull-vim'
 
-Plug 'ntpeters/vim-better-whitespace' " Highlight whitespaces
+Plug 'ntpeters/vim-better-whitespace'    " Highlight whitespaces
 
 " Align
 Plug 'junegunn/vim-easy-align'
@@ -34,7 +34,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " have nodejs and yarn
 
 " Git wrapper
-Plug 'tpope/vim-fugitive' " :Gsplit, :Gvsplit, :Gdiff
+Plug 'tpope/vim-fugitive'                " :Gsplit, :Gvsplit, :Gdiff
 
 " Initialize plugin system
 call plug#end()
@@ -113,7 +113,11 @@ endif
 " `:StripWhitespace`
 " let g:better_whitespace_ctermcolor='<desired_color>' " highlight with desired_color
 let g:better_whitespace_enabled=1 " enable highlight whitespaces
+let g:strip_whitespace_confirm=0
 let g:strip_whitespace_on_save=1 " delete whitespaces after save
+" highlight whitespace in markdown files, though stripping remains disabled by the blacklist
+:autocmd FileType markdown DisableStripWhitespaceOnSave
+:autocmd FileType markdown EnableWhitespace
 
 "-------------------------------------------------------------------------------
 "                              Key Mappings
