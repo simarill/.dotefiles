@@ -22,3 +22,6 @@ alias vc='vim ~/.config/nvim/init.vim'
 
 # tree ingnore node_modules
 alias tree='tree -I node_modules*'
+
+# find all unused scss variables in a folder
+alias fus="bash ~/find_unused_variables.sh"
