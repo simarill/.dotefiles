@@ -36,6 +36,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " have no
 " Git wrapper
 Plug 'tpope/vim-fugitive'                " :Gsplit, :Gvsplit, :Gdiff
 
+" Icons for AAALLL THE THINGS!! (should be loaded at the end)
+Plug 'ryanoasis/vim-devicons'
+
 " Initialize plugin system
 call plug#end()
 
@@ -147,6 +150,12 @@ map <C-n> :NERDTreeToggle<CR>
 map <A-n> :NERDTreeFind<CR>
 let g:NERDTreeDirArrowExpandable = '>'
 let g:NERDTreeDirArrowCollapsible = ' '
+
+" Set syntax highlighting for specific file types
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
+" angular.vim
+autocmd VimEnter * if globpath('.,..','node_modules/@angular') != '' | call angular_cli#init() | endif
 
 "-------------------------------------------------------------------------------
 "                             Markdown Preview

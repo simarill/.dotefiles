@@ -67,6 +67,11 @@
 `<"-{some key}-p>` - past saved at {some key}  
 
 > `*` and `+` are clipboards
+>
+## Good to Know
+
+`ci{pattern}` - change word after pattern  
+`ca{pattern}` - change word with pattern  
 
 ## HELP!
 
