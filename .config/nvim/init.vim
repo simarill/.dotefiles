@@ -21,6 +21,8 @@ Plug 'scrooloose/nerdtree'               " navigable tree in vim
 
 Plug 'bdauria/angular-cli.vim'           " :G(enereate), :E(dit), :S(pilt), :VS(plit), :T(abnew)
 
+Plug 'will133/vim-dirdiff'               " directory diff
+
 " Colorschemes
 Plug 'fcpg/vim-farout'
 Plug 'kadekillary/skull-vim'
@@ -38,7 +40,8 @@ Plug 'tpope/vim-fugitive'                " :Gsplit, :Gvsplit, :Gdiff
 
 " Conquer of conpletions
 " Syntaxes & Language tools
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Completion and LSP support
+
 
 " Icons for AAALLL THE THINGS!! (should be loaded at the end)
 Plug 'ryanoasis/vim-devicons'
