@@ -18,16 +18,6 @@ set_from_resource $ws6  i3-wm.workspace.06.name "6"
 set_from_resource $ws7  i3-wm.workspace.07.name "7"
 set_from_resource $ws8  i3-wm.workspace.08.name "8"
 set_from_resource $ws9  i3-wm.workspace.09.name "9"
-set_from_resource $ws10 i3-wm.workspace.10.name "10"
-set_from_resource $ws11 i3-wm.workspace.11.name "11"
-set_from_resource $ws12 i3-wm.workspace.12.name "12"
-set_from_resource $ws13 i3-wm.workspace.13.name "13"
-set_from_resource $ws14 i3-wm.workspace.14.name "14"
-set_from_resource $ws15 i3-wm.workspace.15.name "15"
-set_from_resource $ws16 i3-wm.workspace.16.name "16"
-set_from_resource $ws17 i3-wm.workspace.17.name "17"
-set_from_resource $ws18 i3-wm.workspace.18.name "18"
-set_from_resource $ws19 i3-wm.workspace.19.name "19"
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -35,10 +25,10 @@ floating_modifier $mod
 hide_edge_borders smart
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec /usr/bin/gnome-terminal
 
 # start a web browser
-bindsym $mod+Shift+Return exec chromium-browser
+bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -116,16 +106,6 @@ workspace_auto_back_and_forth yes
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
-# Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
@@ -135,6 +115,7 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -147,17 +128,15 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Set shut down, restart and locking features
 bindsym $mod+0 mode "$mode_system"
-set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, (e)xit, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/.config/i3/i3exit lock, mode "default"
+    bindsym l exec gnome-screensaver-command -l, mode "default"
     # bindsym l exec betterlockscreen -l dimblur
-    bindsym s exec --no-startup-id ~/.config/i3/i3exit suspend, mode "default"
-    # bindsym s exec betterlockscreen -s dimblur
-    bindsym u exec --no-startup-id ~/.config/i3/i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
-    bindsym h exec --no-startup-id ~/.config/i3/i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/.config/i3/i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id ~/.config/i3/i3exit shutdown, mode "default"
+    bindsym e exec i3-msg exit, mode "default"
+    bindsym s exec betterlockscreen -s dimblur, mode "default"
+    bindsym h exec systemctl hibernate, mode "default"
+    bindsym r exec systemctl reboot, mode "default"
+    bindsym Shift+s exec systemctl poweroff, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -169,9 +148,10 @@ bindsym $mod+c exec gnome-control-center
 bindsym $mod+w exec gnome-control-center wifi
 bindsym $mod+d exec gnome-control-center display
 bindsym $mod+n exec gnome-control-center network
+bindsym $mod+p exec gnome-control-center power
 bindsym $mod+s exec gnome-control-center sound
 # Set Proxy in gnome control center
-bindsym $mod+p mode "$mode_proxy"
+bindsym $mod+Shift+p mode "$mode_proxy"
 set $mode_proxy Proxy mode: (a)uto, (n)one, (m)anual
 mode "$mode_proxy" {
     bindsym a exec --no-startup-id gsettings set org.gnome.system.proxy mode 'auto', mode "default"
@@ -182,7 +162,6 @@ mode "$mode_proxy" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
 # resize window (you can also use the mouse for that)
 mode "Resize Mode" {
         # These bindings trigger as soon as you enter the resize mode
@@ -288,7 +267,7 @@ set_from_resource $i3-wm.bar.font i3-wm.bar.font "pango:Source Code Pro Medium 1
 bar {
   font $i3-wm.bar.font
   separator_symbol " "
-  status_command i3xrocks -c ~/.config/i3xrocks/i3xrocks.conf
+  status_command i3xrocks -c .config/regolith/i3xrocks/config
   tray_output none
   strip_workspace_numbers yes
 
