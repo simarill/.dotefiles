@@ -35,6 +35,9 @@ Plug 'junegunn/vim-easy-align'
 " markdown preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' } " have nodejs and yarn
 
+" LaTex Support (requires latexmk to be installed)
+Plug 'lervag/vimtex' " Latex support
+
 " Git wrapper
 Plug 'tpope/vim-fugitive'                " :Gsplit, :Gvsplit, :Gdiff
 
@@ -131,6 +134,11 @@ let g:strip_whitespace_on_save=1 " delete whitespaces after save
 " highlight whitespace in markdown files, though stripping remains disabled by the blacklist
 :autocmd FileType markdown DisableStripWhitespaceOnSave
 :autocmd FileType markdown EnableWhitespace
+
+" Latex (vimtex)
+let g:vimtex_compiler_progname = 'nvr' " Fix for neovim (needs neovim-remote to be installed)
+                                       " See also: https://github.com/lervag/vimtex/wiki/introduction#neovim
+let g:tex_flavor = "latex" " Tell vim that an empty .tex file is LaTeX
 
 "-------------------------------------------------------------------------------
 "                              Key Mappings
@@ -254,7 +262,8 @@ let g:coc_global_extensions=[
     \ 'coc-yaml',
     \ 'coc-tslint-plugin',
     \ 'coc-emmet',
-    \ 'coc-html'
+    \ 'coc-html',
+    \ 'coc-vimtex'
 \]
 
 " Highlight symbol under cursor on CursorHold
