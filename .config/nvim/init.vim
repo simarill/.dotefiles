@@ -152,6 +152,13 @@ let mapleader = "\<Space>"
 "Toggle spellcheck
 nnoremap <F7> :setlocal spell! spell?<CR>
 inoremap <F7> <C-o>::setlocal spell! spell?<CR>
+set spelllang=de,en
+
+" Turn spell check on automatically for Markdown and .tex files
+augroup enable_spellcheck
+    autocmd!
+    autocmd FileType markdown,tex,latex,context,plaintex set spell
+augroup END
 
 "NERDTree
 " Open / close NERDTree
