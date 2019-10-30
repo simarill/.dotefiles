@@ -10,7 +10,10 @@
 
 ## Navigation                                                                        
 
-`<C-o>` - go back
+`<C-o>` - go back, `<C-I>` go forward  
+`g;` - go to last change , `g,` go to previous change
+
+`o` in visual mode - gets to the other end of the selection and lets you select from there
 
 `zz` - scroll center  
 `zt` - scroll top  
@@ -23,7 +26,7 @@
 `<C-j> (original <C-w>j)` - Focus on spit below of current one  
 `<C-k> (original <C-w>k)` - Focus on spit above of current one  
 `<C-h> (original <C-w>h)` - Focus on spit left hand side of current one  
-`<C-l> (original <C-w>l)` - Focus on spit right hand side of current one  
+`<C-l> (original <C-w>l)` - Focus on spit right hand side of current one
 
 ## Modify Content
 
@@ -59,15 +62,15 @@
 `<C-X><C-L>` - line completion  
 `<C-X><C-O>` - omni completion  
 
-`<C-N>` - word completion (work must be already used)  
+`<C-N>` - word completion (word must be already used)  
 
-## REgister
+## Register
 
 `<"-{some key}-y>` - copy selected to {some key}  
 `<"-{some key}-p>` - past saved at {some key}  
 
 > `*` and `+` are clipboards
->
+
 ## Good to Know
 
 `ci{pattern}` - change word after pattern  
@@ -77,3 +80,5 @@
 
 `<K>` (on config key) - open documentation
 
+To find out which plugn / custom binding is triggered for `<leader>f` use
+`:verbose map <leader>c`
